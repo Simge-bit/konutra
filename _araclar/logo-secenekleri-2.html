@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+* { box-sizing: border-box; margin: 0; }
+body { width: 1600px; background: #ececea; font-family: "Manrope", sans-serif; color: #111; padding: 40px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.card { background: #fff; padding-bottom: 26px; }
+.head { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 30px 0; font-size: 14px; color: #777; }
+.head b { color: #111; font-size: 20px; font-weight: 600; }
+.hero { height: 240px; display: grid; place-items: center; }
+.row { display: grid; grid-template-columns: 1.15fr 1.15fr 96px; gap: 12px; padding: 0 30px; }
+.panel { height: 92px; display: grid; place-items: center; }
+.navbar { border: 1px solid #e2e2e0; height: 92px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 12px; color: #666; }
+.navbar span { display: flex; gap: 14px; }
+.fav { border: 1px solid #e2e2e0; height: 92px; display: grid; place-items: center; }
+.lock { display: inline-flex; align-items: center; line-height: 1; white-space: nowrap; }
+.lock svg { display: block; }
+</style></head><body><div class="grid" id="g"></div>
+<script>
+// Her yönün işareti, yazısı ve rengi
+const O = {
+  A: {
+    ad: "A. Kemer", not: "Kemerli pencere içinde K", renk: "#1F3A32",
+    isaret: (c) => `<svg viewBox="0 0 64 100" style="height:1.5em">
+      <path d="M4 98 V36 A28 28 0 0 1 60 36 V98 Z" fill="none" stroke="${c}" stroke-width="3"/>
+      <path d="M22 40 V82 M22 63 L43 40 M27 58 L44 82" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="square"/></svg>`,
+    yazi: (c) => `<span style="font-family:Jost;font-weight:400;letter-spacing:.34em;margin-right:-.34em;color:${c}">KONUTRA</span>`,
+    bosluk: ".7em"
+  },
+  B: {
+    ad: "B. Kapı", not: "Çerçeve içinde aralık kalmış bir kapı", renk: "#1F2D5C",
+    isaret: (c) => `<svg viewBox="0 0 70 100" style="height:1.35em">
+      <rect x="2" y="2" width="66" height="96" fill="none" stroke="${c}" stroke-width="3.5"/>
+      <path d="M22 98 V24 H48 V98" fill="none" stroke="${c}" stroke-width="3.5"/>
+      <rect x="22" y="24" width="15" height="74" fill="${c}"/></svg>`,
+    yazi: (c) => `<span style="font-family:'Tenor Sans';letter-spacing:.08em;color:${c}">Konutra</span>`,
+    bosluk: ".55em"
+  },
+  C: {
+    ad: "C. Mühür", not: "Çift halkalı mühür içinde K", renk: "#5B1F2E",
+    isaret: (c) => `<svg viewBox="0 0 100 100" style="height:1.55em">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="${c}" stroke-width="2.5"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="${c}" stroke-width="1.2"/>
+      <text x="50" y="50" dy=".35em" text-anchor="middle" font-family="Marcellus" font-size="46" fill="${c}">K</text></svg>`,
+    yazi: (c) => `<span style="font-family:Marcellus;letter-spacing:.2em;margin-right:-.2em;color:${c}">KONUTRA</span>`,
+    bosluk: ".6em"
+  },
+  D: {
+    ad: "D. Cephe", not: "İnce dikey çıtalardan bir cephe", renk: "#12404A",
+    isaret: (c) => `<svg viewBox="0 0 100 100" style="height:1.2em">
+      ${[0, 1, 2, 3, 4, 5, 6].map((i) => `<rect x="${i * 15}" y="${i === 4 ? 30 : 0}" width="7" height="${i === 4 ? 70 : 100}" fill="${c}"/>`).join("")}</svg>`,
+    yazi: (c) => `<span style="font-family:Manrope;font-weight:300;letter-spacing:.1em;margin-right:-.1em;color:${c}">konutra</span>`,
+    bosluk: ".5em"
+  }
+};
+const lock = (k, c, size) => `<span class="lock" style="font-size:${size}px;gap:${O[k].bosluk}">${O[k].isaret(c)}${O[k].yazi(c)}</span>`;
+const fav = (k) => `<svg viewBox="0 0 100 100" width="44" height="44"><rect width="100" height="100" rx="14" fill="${O[k].renk}"/>
+  <g transform="translate(50 50)"><g transform="translate(-30 -30) scale(.6)">${O[k].isaret("#fff").replace(/style="height:[^"]*"/, 'width="100" height="100"')}</g></g></svg>`;
+document.getElementById("g").innerHTML = ["A", "B", "C"].map((k) => `
+  <div class="card">
+    <div class="head"><b>${O[k].ad}</b><span>${O[k].not} · ${O[k].renk}</span></div>
+    <div class="hero">${lock(k, O[k].renk, 62)}</div>
+    <div class="row">
+      <div class="panel" style="background:${O[k].renk}">${lock(k, "#fff", 26)}</div>
+      <div class="navbar">${lock(k, O[k].renk, 17)}<span>Ürün Fiyatlar</span></div>
+      <div class="fav">${fav(k)}</div>
+    </div>
+  </div>`).join("");
+</script></body></html>
