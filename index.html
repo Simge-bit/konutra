@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Konutra | Emlak ofisleri için web sitesi ve yönetim paneli</title>
-<meta name="description" content="Konutra emlak ofislerine hazır bir web sitesi ve Türkçe yönetim paneli sunar. İlanlarınızı kolayca ekler, formdan ve WhatsApp'tan gelen talepleri tek yerde görürsünüz.">
+<title>Konutra | Emlak ofisleri için web sitesi ve portföy yönetimi</title>
+<meta name="description" content="Konutra, emlak ofislerine kendi alan adlarında çalışan kurumsal bir web sitesi ve Türkçe portföy yönetim paneli sunar. Scaffold Yazılım tarafından İstanbul'da geliştirilmektedir.">
 <link rel="canonical" href="https://konutra.com.tr/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -13,253 +13,182 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Konutra">
 <meta property="og:url" content="https://konutra.com.tr/">
-<meta property="og:title" content="Konutra | Emlak ofisinize kendi sitesini kuruyoruz">
-<meta property="og:description" content="Web sitesi ve Türkçe yönetim paneli tek pakette gelir. İlk üç ofise kurulum ücretsiz.">
+<meta property="og:title" content="Konutra | Emlak ofisleri için web sitesi ve portföy yönetimi">
+<meta property="og:description" content="Ofisinizin kurumsal web sitesi ve tek panelden yönetilen portföyünüz.">
 <meta property="og:image" content="https://konutra.com.tr/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/konutra.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://scaffoldtr.dev/#org","name":"Scaffold","url":"https://scaffoldtr.dev","address":{"@type":"PostalAddress","addressLocality":"Eyüpsultan","addressRegion":"İstanbul","addressCountry":"TR"}},
+{"@type":"Organization","@id":"https://scaffoldtr.dev/#org","name":"Scaffold Yazılım","url":"https://scaffoldtr.dev","address":{"@type":"PostalAddress","addressLocality":"Eyüpsultan","addressRegion":"İstanbul","addressCountry":"TR"}},
 {"@type":"Brand","@id":"https://konutra.com.tr/#brand","name":"Konutra","url":"https://konutra.com.tr/","logo":"https://konutra.com.tr/logo/konutra-logo.svg"},
-{"@type":"SoftwareApplication","name":"Konutra","url":"https://konutra.com.tr/","brand":{"@id":"https://konutra.com.tr/#brand"},"publisher":{"@id":"https://scaffoldtr.dev/#org"},"applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Konutra, Scaffold tarafından geliştirilen, emlak ofisleri için web sitesi ve portföy yönetimi yazılımıdır. Bir gayrimenkul ofisi değildir.","offers":{"@type":"Offer","price":"1250","priceCurrency":"TRY"}}
+{"@type":"SoftwareApplication","name":"Konutra","url":"https://konutra.com.tr/","brand":{"@id":"https://konutra.com.tr/#brand"},"publisher":{"@id":"https://scaffoldtr.dev/#org"},"applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Konutra, Scaffold Yazılım tarafından geliştirilen, emlak ofisleri için web sitesi ve portföy yönetimi yazılımıdır. Bir gayrimenkul ofisi değildir.","offers":{"@type":"Offer","price":"1250","priceCurrency":"TRY"}}
 ]}
 </script>
 </head>
 <body>
 
 <header class="nav" id="nav">
-  <a class="logo" href="#"><img src="logo/konutra-logo.svg" alt="Konutra" width="132" height="31"></a>
-  <nav class="links" aria-label="Ana menü">
-    <a class="ulink" href="#tur">Ürün</a>
-    <a class="ulink" href="#demo">Canlı örnek</a>
-    <a class="ulink" href="#fiyatlar">Fiyatlar</a>
-    <a class="ulink" href="#sorular">Sorular</a>
-  </nav>
-  <div class="right"><a class="btn sm" href="#basvuru"><span>Ücretsiz deneyin</span></a><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav">Menü</button></div>
+  <div class="wrap nav-in">
+    <a class="logo" href="#"><img src="logo/konutra-logo.svg" alt="Konutra" width="132" height="31"></a>
+    <nav class="links" aria-label="Ana menü">
+      <a class="ulink" href="#ozellikler">Özellikler</a>
+      <a class="ulink" href="#ornek">Örnek proje</a>
+      <a class="ulink" href="#fiyatlandirma">Fiyatlandırma</a>
+      <a class="ulink" href="#hakkimizda">Hakkımızda</a>
+      <a class="ulink" href="#sss">SSS</a>
+    </nav>
+    <div class="right"><a class="btn sm" href="#demo">Demo talep edin</a><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav">Menü</button></div>
+  </div>
 </header>
 <nav class="mnav" id="mnav" aria-label="Telefon menüsü">
-  <a href="#tur">Ürün</a><a href="#demo">Canlı örnek</a><a href="#fiyatlar">Fiyatlar</a><a href="#sorular">Sorular</a>
-  <a class="btn" href="#basvuru"><span>Ücretsiz deneyin</span><span class="arr">→</span></a>
+  <a href="#ozellikler">Özellikler</a><a href="#ornek">Örnek proje</a><a href="#fiyatlandirma">Fiyatlandırma</a><a href="#hakkimizda">Hakkımızda</a><a href="#sss">SSS</a>
+  <a class="btn" href="#demo">Demo talep edin</a>
 </nav>
 
 <main>
-  <section class="hero">
-    <div class="label rise">Emlak ofisleri için web sitesi ve yönetim paneli</div>
-    <h1 class="rise" style="--d:80ms">Emlak ofisinize kendi sitesini kuruyoruz.</h1>
-    <div class="lead">
-      <p class="rise" style="--d:160ms">Konutra ile ofisinizin ilanları, danışmanları ve iletişim formları tek bir sitede toplanır. İlanlarınızı Türkçe bir panelden birkaç dakikada eklersiniz.</p>
-      <div class="acts rise" style="--d:220ms">
-        <a class="btn" href="#basvuru"><span>Ücretsiz deneyin</span><span class="arr">→</span></a>
-        <a class="btn line" href="#demo"><span>Canlı örneği gezin</span></a>
-      </div>
-    </div>
-    <div class="stage rise" style="--d:300ms">
-      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>ofisiniz.konutra.com</span></div><img src="img/site-home.jpg" alt="Konutra ile hazırlanmış örnek emlak sitesinin ana sayfası" fetchpriority="high"></div>
-      <div class="phone"><img src="img/mob-home.jpg" alt="Örnek sitenin telefondaki görünümü" loading="lazy"></div>
+  <section class="wrap intro">
+    <div class="eyebrow">Emlak ofisleri için web sitesi ve portföy yönetimi</div>
+    <h1>Ofisinizin kurumsal web sitesi, tek panelden yönetilen portföyünüz.</h1>
+    <p class="lead">Konutra, emlak ofislerine kendi alan adlarında çalışan, mobil uyumlu bir web sitesi ve Türkçe yönetim paneli sunar. Portföyünüz tek panelden yönetilir, siteden gelen talepler anlık olarak kayda geçer.</p>
+    <div class="acts">
+      <a class="btn" href="#demo">Demo talep edin</a>
+      <a class="btn line" href="#ornek">Örnek projeyi inceleyin</a>
     </div>
   </section>
 
   <section class="wrap">
-    <div class="facts" data-reveal>
-      <div><b class="num">1-3 iş günü</b><span>Siteniz yayına girer</span></div>
-      <div><b class="num">12 sayfa</b><span>Hazır gelir, siz sadece ilan eklersiniz</span></div>
-      <div><b class="num">0 TL</b><span>İlk üç ofise kurulum ücreti</span></div>
-      <div><b>Sözleşme yok</b><span>İstediğiniz ay bırakabilirsiniz</span></div>
+    <figure class="hero-shot">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-home.jpg" alt="Konutra ile hazırlanmış örnek emlak sitesinin ana sayfası" width="1600" height="1000" fetchpriority="high"></div>
+      <figcaption>Örnek proje. Ofis ve ilanlar temsilidir.</figcaption>
+    </figure>
+    <div class="trust">
+      <div><b>1-3 iş günü</b>Kurulum ve yayın süresi</div>
+      <div><b>Kendi alan adınız</b>Ofisinize ait adres ve SSL sertifikası</div>
+      <div><b>Sözleşmesiz</b>Aylık hizmet, taahhüt yok</div>
+      <div><b>Yerinde destek</b>İstanbul Avrupa yakası</div>
     </div>
   </section>
 
-  <section class="sec wrap">
-    <div class="sec-head">
-      <div class="label" data-reveal>Neden?</div>
-      <div><h2 data-reveal>Ofisinizin kendi sitesi neden olmalı?</h2></div>
+  <section class="wrap sec" id="ozellikler">
+    <h2 class="sec-title">Özellikler</h2>
+    <div class="fx">
+      <div class="fx-img" data-reveal><img src="img/site-ilanlar.jpg" alt="Sitenin ilan listesi ve harita görünümü" loading="lazy"></div>
+      <div class="fx-txt" data-reveal><h3>Web sitesi</h3><p>Ofisinizin alan adında çalışan, tüm ekran boyutlarına uyumlu kurumsal site. Ziyaretçiler portföyünüzü filtreler, haritada inceler ve WhatsApp üzerinden doğrudan iletişime geçer.</p>
+        <ul><li>Gelişmiş ilan arama</li><li>Harita görünümü</li><li>İlan detay sayfası</li><li>Kredi hesaplama</li><li>Danışman profilleri</li><li>WhatsApp iletişimi</li></ul></div>
     </div>
-    <ul class="why">
-      <li data-reveal><span class="label num">01</span><h3>Müşteri sizi bulur</h3><p>Ev arayan biri ofisinizin adını aradığında karşısına sizin siteniz çıkar. İlanlarınız başka ofislerin ilanları arasında kaybolmaz.</p></li>
-      <li data-reveal style="--d:100ms"><span class="label num">02</span><h3>Talepler doğrudan size gelir</h3><p>İletişim formundan, gezme randevusundan ve değerleme formundan gelen talepler panelinize düşer. Kimin arandığını oradan takip edersiniz.</p></li>
-      <li data-reveal style="--d:200ms"><span class="label num">03</span><h3>Daha güvenilir görünürsünüz</h3><p>Kendi alan adı olan düzenli bir site, ev sahiplerine ofisinizin işini ciddiye aldığını gösterir.</p></li>
-    </ul>
-  </section>
-
-  <section class="sec wrap" id="tur" style="padding-top:0">
-    <div class="sec-head">
-      <div class="label" data-reveal>Ürün turu</div>
-      <div><h2 data-reveal>Siteniz ve paneliniz nasıl görünür?</h2></div>
+    <div class="fx rev">
+      <div class="fx-img" data-reveal><img src="img/panel-ilanlar.jpg" alt="Yönetim panelinde ilan listesi" loading="lazy"></div>
+      <div class="fx-txt" data-reveal><h3>Portföy yönetimi</h3><p>İlanlar fotoğraf, konum ve teknik bilgileriyle dakikalar içinde yayına alınır. Mevcut portföy Excel dosyasıyla toplu olarak aktarılabilir.</p>
+        <ul><li>Sürükle bırak fotoğraf yükleme</li><li>Otomatik görsel optimizasyonu</li><li>Excel ile toplu aktarım</li><li>İlan metninden otomatik doldurma</li><li>Danışman yönetimi</li><li>Blog ve duyurular</li></ul></div>
     </div>
-    <div class="tour-tabs" role="tablist" id="tabs" data-reveal></div>
-    <div id="pane" data-reveal></div>
-  </section>
-
-  <section class="sec wrap" style="padding-top:0">
-    <div class="sec-head">
-      <div class="label" data-reveal>Özellikler</div>
-      <div><h2 data-reveal>Bir emlak sitesinde olması gereken her şey hazır gelir</h2></div>
+    <div class="fx">
+      <div class="fx-img" data-reveal><img src="img/panel-talep-detay.jpg" alt="Yönetim panelinde talep detayı ve görüşme durumu" loading="lazy"></div>
+      <div class="fx-txt" data-reveal><h3>Talep takibi</h3><p>İletişim formu, gezme randevusu ve değerleme talepleri tek ekranda toplanır. Her talep ilgili ilan ve görüşme durumuyla birlikte kayıt altına alınır.</p>
+        <ul><li>İletişim talepleri</li><li>Gezme randevuları</li><li>Değerleme başvuruları</li><li>İlan bazında kayıt</li><li>Görüşme durumu</li><li>Not ekleme</li></ul></div>
     </div>
-    <div class="feats">
-      <div class="fg" data-reveal><h3>Web sitesi</h3><dl>
-        <div><dt>Gelişmiş ilan arama</dt><dd>Konum, fiyat, oda sayısı ve metrekare filtreleri, harita üzerinde ilan görünümü.</dd></div>
-        <div><dt>İlan detay sayfası</dt><dd>Fotoğraf galerisi, konum haritası, kredi hesaplama, gezme randevusu ve WhatsApp iletişimi.</dd></div>
-        <div><dt>Danışman profilleri</dt><dd>Her danışman için tanıtım sayfası ve kişisel ilan listesi.</dd></div>
-        <div><dt>Mobil uyumlu tasarım</dt><dd>Telefon, tablet ve bilgisayarda aynı düzende çalışan arayüz.</dd></div>
-      </dl></div>
-      <div class="fg" data-reveal style="--d:80ms"><h3>Yönetim paneli</h3><dl>
-        <div><dt>Portföy yönetimi</dt><dd>Sürükle bırak fotoğraf yükleme ve otomatik görsel optimizasyonu.</dd></div>
-        <div><dt>Toplu ilan aktarımı</dt><dd>Mevcut portföyün Excel dosyasıyla panele tek seferde yüklenmesi.</dd></div>
-        <div><dt>Talep takibi</dt><dd>İletişim, gezme randevusu ve değerleme talepleri tek ekranda.</dd></div>
-        <div><dt>Değerleme başvuruları</dt><dd>Ev sahiplerinden gelen değerleme talepleriyle yeni portföy kaynağı.</dd></div>
-      </dl></div>
-      <div class="fg" data-reveal style="--d:160ms"><h3>Altyapı ve uyumluluk</h3><dl>
-        <div><dt>Kendi alan adınız ve SSL</dt><dd>Ofisinize ait adres üzerinde güvenli bağlantı.</dd></div>
-        <div><dt>SEO uyumlu altyapı</dt><dd>Okunabilir ilan adresleri, otomatik site haritası ve yapısal veri.</dd></div>
-        <div><dt>Yasal uyumluluk</dt><dd>KVKK aydınlatma metni ve taşınmaz ticareti yetki belgesi numarası.</dd></div>
-        <div><dt>Spam koruması</dt><dd>Formlar otomatik gönderimlere karşı korunur.</dd></div>
-      </dl></div>
+    <div class="fx rev">
+      <div class="fx-img" data-reveal><img src="img/site-ilan.jpg" alt="Sitede ilan detay sayfası" loading="lazy"></div>
+      <div class="fx-txt" data-reveal><h3>Altyapı ve uyumluluk</h3><p>Barındırma, güvenlik ve yasal gereklilikler hizmete dahildir. Teknik bakım ve güncellemeler tarafımızca yürütülür.</p>
+        <ul><li>Kendi alan adınız</li><li>SSL sertifikası</li><li>SEO uyumlu altyapı</li><li>Günlük yedekleme</li><li>KVKK aydınlatma metni</li><li>Spam koruması</li></ul></div>
     </div>
   </section>
 
-  <section class="sec wrap dark">
-    <div class="show rev">
-      <div class="phones" data-reveal>
-        <div class="phone"><img src="img/mob-home.jpg" alt="Sitenin telefondaki ana sayfası" loading="lazy"></div>
-        <div class="phone"><img src="img/mob-ilan.jpg" alt="Sitenin telefondaki ilan sayfası" loading="lazy"></div>
-      </div>
-      <div class="txt">
-        <div class="label" data-reveal>Telefonda</div>
-        <h3 data-reveal style="margin-top:18px">Ziyaretçileriniz sitenize çoğunlukla telefondan girer</h3>
-        <p data-reveal>İlan sayfasındaki WhatsApp düğmesine dokunan kişi, size hangi ilanı sorduğunu yazan hazır bir mesajla ulaşır. Siz de hangi ilanla ilgilendiğini hemen anlarsınız.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec wrap" id="demo">
-    <div class="sec-head">
-      <div class="label" data-reveal>Canlı örnek</div>
-      <div><h2 data-reveal>Örnek siteyi buradan gezin</h2><p data-reveal>Bu ofisler Konutra'nın nasıl çalıştığını göstermek için hazırlandı ve hayalidir. Sizin siteniz kendi adınız, renginiz ve ilanlarınızla kurulur.</p></div>
+  <section class="wrap sec" id="ornek">
+    <div class="sec-row">
+      <h2 class="sec-title">Örnek proje</h2>
+      <p class="sec-note">Aşağıdaki siteler Konutra altyapısının tanıtımı için hazırlanmıştır. Ofis, danışman ve ilan bilgileri temsilidir.</p>
     </div>
     <div class="live" data-reveal>
       <div class="switch">
-        <button class="tab" type="button" data-src="https://simge-bit.github.io/emlak-demo/" data-host="ihlamur.konutra.com" aria-selected="true">Ihlamur Gayrimenkul</button>
-        <button class="tab" type="button" data-src="https://simge-bit.github.io/emlak-demo/demo/ornek-ofis/" data-host="korfez.konutra.com" aria-selected="false">Körfez Emlak</button>
-        <a class="open ulink" id="openNew" href="https://simge-bit.github.io/emlak-demo/" target="_blank" rel="noopener">Yeni sekmede aç</a>
+        <button class="tab" type="button" data-src="https://simge-bit.github.io/emlak-demo/demo/ornek-ofis/" aria-selected="true">Körfez Emlak</button>
+        <button class="tab" type="button" data-src="https://simge-bit.github.io/emlak-demo/" aria-selected="false">Ihlamur Gayrimenkul</button>
+        <a class="open ulink" id="openNew" href="https://simge-bit.github.io/emlak-demo/demo/ornek-ofis/" target="_blank" rel="noopener">Yeni sekmede açın</a>
       </div>
-      <div class="browser"><div class="bar"><i></i><i></i><i></i><span id="liveHost">ihlamur.konutra.com</span></div><iframe id="live" src="about:blank" data-src="https://simge-bit.github.io/emlak-demo/" title="Konutra örnek emlak sitesi" loading="lazy"></iframe></div>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><iframe id="live" src="about:blank" data-src="https://simge-bit.github.io/emlak-demo/demo/ornek-ofis/" title="Konutra örnek emlak sitesi" loading="lazy"></iframe></div>
     </div>
   </section>
 
-  <section class="sec wrap" style="padding-top:0">
-    <div class="sec-head">
-      <div class="label" data-reveal>Karşılaştırma</div>
-      <div><h2 data-reveal>Diğer seçeneklerle karşılaştırın</h2></div>
+  <section class="wrap sec split" id="fiyatlandirma">
+    <div>
+      <h2 class="sec-title">Fiyatlandırma</h2>
+      <p class="sec-note">Ödemeler aylık ya da yıllık olarak havale veya EFT ile yapılır.</p>
     </div>
-    <div class="compare-wrap" data-reveal>
-      <table class="compare">
-        <thead><tr><th></th><th class="us">Konutra</th><th>Ajansa site yaptırmak</th><th>Sadece emlak portalları</th></tr></thead>
-        <tbody>
-          <tr><th>Başlangıç maliyeti</th><td class="us">7.500 TL, ilk üç ofise ücretsiz</td><td>Genelde 20.000 ile 60.000 TL</td><td>Yok</td></tr>
-          <tr><th>Süren masraf</th><td class="us">Aylık 1.250 TL, barındırma ve bakım dahil</td><td>Barındırma, alan adı ve bakım ayrıca ücretlendirilir</td><td>İlan ve vitrin paketleri</td></tr>
-          <tr><th>Hazır olma süresi</th><td class="us">1-3 iş günü</td><td>Genelde birkaç hafta</td><td>Hemen</td></tr>
-          <tr><th>Kendi alan adınız</th><td class="us yes">Var</td><td class="yes">Var</td><td class="no">Yok, ilanlarınız portalın sitesinde durur</td></tr>
-          <tr><th>Talepler tek panelde</th><td class="us yes">Form, randevu ve değerleme talepleri</td><td class="no">Çoğunlukla yalnızca e-posta</td><td class="no">Mesajlar portalın içinde kalır</td></tr>
-          <tr><th>İlanları kendiniz eklemek</th><td class="us yes">Türkçe panelden birkaç dakikada</td><td class="no">Siteye göre değişir</td><td class="yes">Var</td></tr>
-          <tr><th>Rakiplerden ayrışmak</th><td class="us yes">Kendi tasarımınız ve adınız</td><td class="yes">Var</td><td class="no">Bütün ofislerin ilanları yan yana</td></tr>
-        </tbody>
+    <div data-reveal>
+      <table class="ptable">
+        <tr><td>Kurulum ücreti</td><td>7.500 TL</td></tr>
+        <tr><td>Aylık hizmet bedeli</td><td>1.250 TL</td></tr>
+        <tr><td>Yıllık ödeme</td><td>12.000 TL</td></tr>
       </table>
+      <p class="pnote">Barındırma, SSL sertifikası, günlük yedekleme, bakım ve teknik destek aylık bedele dahildir. Ofisinize ait alan adının yıllık kayıt ücreti aylık bedele dahil değildir.</p>
+      <p class="pnote"><b>Kurucu ofis programı.</b> İlk üç ofisten kurulum ücreti alınmaz ve ilk ay ücretsizdir. Sonraki on iki ay boyunca aylık bedel 750 TL olarak uygulanır.</p>
     </div>
   </section>
 
-  <section class="sec wrap" style="padding-top:0">
-    <div class="sec-head">
-      <div class="label" data-reveal>Nasıl başlarsınız?</div>
-      <div><h2 data-reveal>Siteniz birkaç gün içinde yayında olur</h2></div>
-    </div>
-    <ol class="steps">
-      <li data-reveal><span class="n num">01</span><h3>Tanışalım</h3><p>Ofisinize uğrar ya da kısa bir görüntülü görüşme yaparız. Sitenizde neler olmasını istediğinizi konuşuruz.</p></li>
-      <li data-reveal style="--d:100ms"><span class="n num">02</span><h3>Sitenizi kuralım</h3><p>Ofis bilgilerinizi, renginizi, danışmanlarınızı ve mevcut ilanlarınızı siteye biz gireriz.</p></li>
-      <li data-reveal style="--d:200ms"><span class="n num">03</span><h3>Yayına alalım</h3><p>Size panel girişinizi verir, ilan eklemeyi birlikte gösteririz. Sonrasında sorularınız için WhatsApp'tan bize ulaşabilirsiniz.</p></li>
-    </ol>
-  </section>
-
-  <section class="sec wrap" id="fiyatlar" style="padding-top:0">
-    <div class="sec-head">
-      <div class="label" data-reveal>Fiyatlar</div>
-      <div><h2 data-reveal>Sade ve açık fiyatlar</h2><p data-reveal>Sözleşme süresi yoktur. İstediğiniz ay bırakabilirsiniz.</p></div>
-    </div>
-    <div class="offer" data-reveal>
-      <div><div class="label">Kurucu ofis teklifi</div><h3 style="margin-top:12px">İlk üç ofise özel</h3></div>
-      <p>İlk üç ofisten kurulum ücreti almıyoruz ve ilk ay ücretsiz. Sonraki on iki ay boyunca aylık ücret 750 TL olarak sabit kalır.</p>
-    </div>
-    <div class="plans">
-      <div class="plan" data-reveal>
-        <div class="label">Aylık</div>
-        <div class="price num">1.250<small>TL / ay</small></div>
-        <div class="note">Her ay ödenir</div>
-        <ul><li>Web sitesi ve yönetim paneli</li><li>Barındırma ve güvenlik sertifikası</li><li>Bakım ve güncellemeler</li><li>WhatsApp desteği</li></ul>
-      </div>
-      <div class="plan" data-reveal style="--d:100ms">
-        <div class="label">Yıllık</div>
-        <div class="price num">12.000<small>TL / yıl</small></div>
-        <div class="note">Ayda 1.000 TL'ye denk gelir</div>
-        <ul><li>Aylık paketteki her şey</li><li>Yılda 3.000 TL tasarruf</li><li>Yıllık tek ödeme</li></ul>
-      </div>
-      <div class="plan" data-reveal style="--d:200ms">
-        <div class="label">Kurulum</div>
-        <div class="price num">7.500<small>TL</small></div>
-        <div class="note">Tek seferlik</div>
-        <ul><li>Ofis bilgilerinin ve renginizin girilmesi</li><li>Mevcut ilanlarınızın aktarılması</li><li>Kendi alan adınızın bağlanması</li><li>Panel kullanımının gösterilmesi</li></ul>
-      </div>
-    </div>
-    <p class="fine" data-reveal>Siteniz başta ofisiniz.konutra.com adresinde yayına girer. Kendi alan adınızı kullanmak isterseniz alan adının yıllık ücreti size aittir.</p>
-  </section>
-
-  <section class="sec wrap" id="sorular" style="padding-top:0">
-    <div class="sec-head">
-      <div class="label" data-reveal>Sorular</div>
-      <div><h2 data-reveal>Sık sorulan sorular</h2></div>
-    </div>
-    <div class="faq">
-      <details data-reveal><summary><span>Teknik bilgim yok, paneli kullanabilir miyim?</span><i aria-hidden="true"></i></summary><p>Evet. Panel Türkçedir ve bir ilanı eklemek bir form doldurmak kadar kolaydır. Kurulumdan sonra kullanımını sizinle birlikte deneriz.</p></details>
-      <details data-reveal><summary><span>Sahibinden'deki ilanlarımı aktarabilir misiniz?</span><i aria-hidden="true"></i></summary><p>Evet. İlk kurulumda mevcut ilanlarınızı fotoğraflarıyla birlikte sitenize biz aktarıyoruz.</p></details>
-      <details data-reveal><summary><span>Kendi alan adımı kullanabilir miyim?</span><i aria-hidden="true"></i></summary><p>Evet. Elinizde bir alan adı varsa sitenizi o adrese bağlarız. Yoksa sizin adınıza almanıza yardımcı oluruz.</p></details>
-      <details data-reveal><summary><span>Sitenin rengini ve yazılarını değiştirebilir miyim?</span><i aria-hidden="true"></i></summary><p>Ofisinizin rengini, tanıtım yazılarını, hizmetlerinizi ve sık sorulan soruları panelden istediğiniz zaman değiştirebilirsiniz.</p></details>
-      <details data-reveal><summary><span>Ödemeyi nasıl yapıyorum?</span><i aria-hidden="true"></i></summary><p>Ödemeyi aylık ya da yıllık olarak havale veya EFT ile yapıyorsunuz. Ödeme tarihinden önce size WhatsApp'tan hatırlatma gönderiyoruz.</p></details>
-      <details data-reveal><summary><span>Bırakmak istersem ne olur?</span><i aria-hidden="true"></i></summary><p>Sözleşme süresi yoktur. Bıraktığınızda ilan bilgilerinizi ve fotoğraflarınızı size teslim ederiz.</p></details>
-      <details data-reveal><summary><span>Siteye gelen talepleri nasıl görürüm?</span><i aria-hidden="true"></i></summary><p>İletişim formu, gezme randevusu ve değerleme talepleri panelinizdeki Gelen talepler bölümüne düşer. Her talebin hangi ilandan geldiğini ve arayıp aramadığınızı orada görürsünüz.</p></details>
-    </div>
-  </section>
-
-  <section class="sec wrap dark" id="basvuru">
-    <div class="cta">
+  <section class="wrap sec" id="hakkimizda">
+    <h2 class="sec-title">Hakkımızda</h2>
+    <div class="founder" data-reveal>
+      <img src="img/simge-solmaz.jpg" alt="Simge Solmaz" width="640" height="800" loading="lazy">
       <div>
-        <div class="label" data-reveal>Ücretsiz deneyin</div>
-        <h2 data-reveal style="margin-top:18px">Sitenizi sizin ilanlarınızla hazırlayalım</h2>
-        <p class="sub" data-reveal>Bilgilerinizi bırakın, ofisinizin adı ve kendi ilanlarınızla hazırlanmış bir örnek siteyi size ücretsiz gönderelim.</p>
+        <div class="who"><b>Simge Solmaz</b><span>Kurucu</span></div>
+        <p>Uluslararası ticaret ve finans alanında eğitim almıştır. Web geliştirme ve yapay zeka projelerine odaklanan bir teknoloji şirketinde Raporlama ve Ar-Ge Koordinatörü olarak görev yapmış, Teknofest ölçeğindeki projeler için fizibilite çalışmaları, teknik dokümantasyon ve uygulamalı araştırma yürütmüştür.</p>
+        <p>Konutra'da ürün geliştirme, kurulum ve müşteri ilişkilerinden doğrudan sorumludur.</p>
       </div>
-      <form class="form" id="form" novalidate data-reveal>
+      <dl class="facts">
+        <div><dt>Geliştirici</dt><dd><a class="ulink" href="https://scaffoldtr.dev" target="_blank" rel="noopener">Scaffold Yazılım</a></dd></div>
+        <div><dt>Merkez</dt><dd>Eyüpsultan, İstanbul</dd></div>
+        <div><dt>Kurulum ve eğitim</dt><dd>İstanbul Avrupa yakasında yerinde</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="wrap sec split" id="sss">
+    <div><h2 class="sec-title">Sıkça sorulan sorular</h2></div>
+    <div class="faq">
+      <details><summary><span>Kurulum süreci nasıl işler?</span><i aria-hidden="true"></i></summary><p>Ön görüşmede ofis bilgileri, marka rengi ve mevcut portföy alınır. Site 1-3 iş günü içinde kurulur, ilanlar aktarılır ve panel eğitimi verilerek yayına geçilir.</p></details>
+      <details><summary><span>Mevcut ilanlarımız aktarılabilir mi?</span><i aria-hidden="true"></i></summary><p>Evet. Sahibinden ve Emlakjet ilanları ile Excel listeleri kurulum sırasında fotoğraflarıyla birlikte aktarılır.</p></details>
+      <details><summary><span>Kendi alan adımızı kullanabilir miyiz?</span><i aria-hidden="true"></i></summary><p>Evet. Mevcut alan adınız siteye bağlanır. Alan adınız yoksa satın alma sürecinde destek verilir.</p></details>
+      <details><summary><span>Panelin kullanımı teknik bilgi gerektirir mi?</span><i aria-hidden="true"></i></summary><p>Hayır. Panel Türkçedir ve ilan girişi form doldurma kolaylığındadır. Kurulumdan sonra ofis ekibine kullanım eğitimi verilir.</p></details>
+      <details><summary><span>Site tasarımı ofisimize göre düzenlenir mi?</span><i aria-hidden="true"></i></summary><p>Logo, marka rengi, tanıtım metinleri ve hizmetler ofisinize göre düzenlenir. Bu içerikler daha sonra panelden güncellenebilir.</p></details>
+      <details><summary><span>Hizmeti sonlandırmak istersek ne olur?</span><i aria-hidden="true"></i></summary><p>Sözleşme süresi yoktur. Hizmet sonlandırıldığında ilan bilgileri ve fotoğraflar ofise teslim edilir.</p></details>
+    </div>
+  </section>
+
+  <section class="dark" id="demo">
+    <div class="wrap cta">
+      <div>
+        <h2>Ofisinize özel demo</h2>
+        <p class="sub">Ofisinizin mevcut portföyüyle hazırlanmış bir önizlemeyi ücretsiz olarak sunuyoruz. Formu doldurmanız halinde en kısa sürede dönüş yapılır.</p>
+      </div>
+      <form class="form" id="form" novalidate>
         <div class="f"><label for="ad">Ad soyad</label><input id="ad" name="ad" required autocomplete="name"></div>
         <div class="f"><label for="ofis">Ofis adı</label><input id="ofis" name="ofis" required autocomplete="organization"></div>
         <div class="f"><label for="tel">Telefon</label><input id="tel" name="tel" required inputmode="tel" autocomplete="tel"></div>
         <div class="f"><label for="ilce">İlçe</label><input id="ilce" name="ilce" autocomplete="address-level2"></div>
-        <div class="f full"><label for="link">Sahibinden mağaza linkiniz (varsa)</label><input id="link" name="link" inputmode="url"></div>
-        <div class="send"><button class="btn" type="submit"><span>WhatsApp'tan gönder</span><span class="arr">→</span></button><span class="hint">Bilgileriniz WhatsApp mesajı olarak bize ulaşır. Başka hiçbir yere kaydedilmez. Ayrıntılar <a class="ulink" href="gizlilik.html">gizlilik sayfasında</a>.</span></div>
+        <div class="f full"><label for="link">Sahibinden mağaza bağlantısı (varsa)</label><input id="link" name="link" inputmode="url"></div>
+        <div class="send"><button class="btn" type="submit">WhatsApp ile gönderin</button><span class="hint">Form bilgileri WhatsApp mesajı olarak iletilir ve başka bir yerde saklanmaz. Ayrıntılar için <a class="ulink" href="gizlilik.html">gizlilik</a> sayfasını inceleyebilirsiniz.</span></div>
       </form>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="cols">
-    <div><a class="logo" href="#"><img src="logo/konutra-logo-beyaz.svg" alt="Konutra" width="160" height="37"></a><p>Konutra, emlak ofisleri için geliştirilmiş bir web sitesi ve portföy yönetim yazılımıdır.</p></div>
-    <div><div class="h">Ürün</div><a href="#tur">Ürün turu</a><a href="#demo">Canlı örnek</a><a href="#fiyatlar">Fiyatlar</a><a href="#sorular">Sorular</a></div>
-    <div><div class="h">Örnek siteler</div><a href="https://simge-bit.github.io/emlak-demo/" target="_blank" rel="noopener">Ihlamur Gayrimenkul</a><a href="https://simge-bit.github.io/emlak-demo/demo/ornek-ofis/" target="_blank" rel="noopener">Körfez Emlak</a></div>
-    <div><div class="h">İletişim</div><span id="iletisim"></span><a href="gizlilik.html">Gizlilik</a></div>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="#"><img src="logo/konutra-logo-beyaz.svg" alt="Konutra" width="160" height="37"></a><p>Konutra, emlak ofisleri için geliştirilmiş bir web sitesi ve portföy yönetim yazılımıdır.</p></div>
+      <div><div class="h">Ürün</div><a href="#ozellikler">Özellikler</a><a href="#ornek">Örnek proje</a><a href="#fiyatlandirma">Fiyatlandırma</a><a href="#sss">SSS</a></div>
+      <div><div class="h">Kurumsal</div><a href="#hakkimizda">Hakkımızda</a><a href="gizlilik.html">Gizlilik</a></div>
+      <div><div class="h">İletişim</div><span id="iletisim"></span><span class="addr">Eyüpsultan, İstanbul</span></div>
+    </div>
+    <div class="bottom"><span>© <span id="yil"></span> <a href="https://scaffoldtr.dev" target="_blank" rel="noopener">Scaffold Yazılım</a>. Tüm hakları saklıdır.</span><span>Örnek projelerdeki ofis ve ilan bilgileri temsilidir.</span></div>
   </div>
-  <div class="bottom"><span>© <span id="yil"></span> <a href="https://scaffoldtr.dev" target="_blank" rel="noopener">Scaffold Yazılım</a>. Tüm hakları saklıdır.</span><span>Sitedeki örnek ofisler ve ilanlar hayalidir.</span></div>
 </footer>
 
-<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp ile yazın"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg></a>
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg></a>
 
 <script src="js/konutra.js"></script>
 </body>
