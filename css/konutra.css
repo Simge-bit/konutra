@@ -75,12 +75,12 @@ button, input, select { font: inherit; color: inherit; }
 .why h3 { margin: 34px 0 12px; font-size: clamp(24px, 2.4vw, 36px); font-weight: 500; letter-spacing: -.015em; line-height: 1.08; }
 .why p { margin: 0; color: var(--muted); }
 
-.feats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-.feats div { padding: 30px 30px 34px 0; border-bottom: 1px solid var(--line); }
-.feats div:not(:nth-child(3n)) { border-right: 1px solid var(--line); margin-right: 0; }
-.feats div:not(:nth-child(3n+1)) { padding-left: 30px; }
-.feats h3 { margin: 18px 0 8px; font-size: 21px; font-weight: 500; letter-spacing: -.015em; }
-.feats p { margin: 0; color: var(--muted); font-size: 15px; max-width: 40ch; }
+.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(28px, 4vw, 64px); }
+.feats h3 { margin: 0; padding: 0 0 18px; border-bottom: 2px solid var(--navy); font-size: 22px; font-weight: 500; letter-spacing: -.01em; }
+.feats dl { margin: 0; }
+.feats dl div { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.feats dt { font-weight: 600; font-size: 15px; color: var(--fg); }
+.feats dd { margin: 4px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
 
 .show { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(30px, 5vw, 80px); align-items: center; }
 .show.rev { grid-template-columns: 7fr 5fr; }
@@ -162,8 +162,7 @@ button, input, select { font: inherit; color: inherit; }
   .hero .acts { justify-self: start; }
   .phone { right: 2%; width: 30vw; border-width: 5px; border-radius: 20px; }
   .why, .steps, .plans { grid-template-columns: 1fr; }
-  .feats { grid-template-columns: 1fr; }
-  .feats div { padding-left: 0 !important; border-right: 0 !important; }
+  .feats { grid-template-columns: 1fr; gap: 44px; }
   .form { grid-template-columns: 1fr; }
   .phones .phone:nth-child(2) { margin-top: 30px; }
 }
