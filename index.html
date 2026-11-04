@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Konutra | Emlak ofisleri için web sitesi ve portföy yönetimi</title>
-<meta name="description" content="Konutra, emlak ofislerine kendi alan adlarında çalışan kurumsal bir web sitesi ve Türkçe portföy yönetim paneli sunar. Scaffold Yazılım tarafından İstanbul'da geliştirilmektedir.">
+<title>Emlak Sitesi ve Portföy Yönetim Yazılımı | Konutra</title>
+<meta name="description" content="Emlak ofisleri için kurumsal web sitesi ve Türkçe portföy yönetim paneli. İlan yönetimi, talep takibi ve kredi hesaplama hazır gelir. Kurulum 1-3 iş günü.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://konutra.com.tr/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -13,20 +14,23 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Konutra">
 <meta property="og:url" content="https://konutra.com.tr/">
-<meta property="og:title" content="Konutra | Emlak ofisleri için web sitesi ve portföy yönetimi">
-<meta property="og:description" content="Ofisinizin kurumsal web sitesi ve tek panelden yönetilen portföyünüz.">
+<meta property="og:title" content="Emlak Sitesi ve Portföy Yönetim Yazılımı | Konutra">
+<meta property="og:description" content="Emlak ofisleri için kurumsal web sitesi, Türkçe yönetim paneli ve talep takibi tek pakette.">
 <meta property="og:image" content="https://konutra.com.tr/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Konutra, emlak ofisleri için web sitesi ve portföy yönetimi">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/site-home.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="css/konutra.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://scaffoldtr.dev/#org","name":"Scaffold Yazılım","url":"https://scaffoldtr.dev","address":{"@type":"PostalAddress","addressLocality":"Eyüpsultan","addressRegion":"İstanbul","addressCountry":"TR"}},
 {"@type":"Brand","@id":"https://konutra.com.tr/#brand","name":"Konutra","url":"https://konutra.com.tr/","logo":"https://konutra.com.tr/logo/konutra-logo.svg"},
-{"@type":"SoftwareApplication","name":"Konutra","url":"https://konutra.com.tr/","brand":{"@id":"https://konutra.com.tr/#brand"},"publisher":{"@id":"https://scaffoldtr.dev/#org"},"applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Konutra, Scaffold Yazılım tarafından geliştirilen, emlak ofisleri için web sitesi ve portföy yönetimi yazılımıdır. Bir gayrimenkul ofisi değildir.","offers":{"@type":"Offer","price":"1250","priceCurrency":"TRY"}}
+{"@type":"SoftwareApplication","name":"Konutra","url":"https://konutra.com.tr/","brand":{"@id":"https://konutra.com.tr/#brand"},"publisher":{"@id":"https://scaffoldtr.dev/#org"},"applicationCategory":"BusinessApplication","areaServed":"TR","inLanguage":"tr","operatingSystem":"Web","description":"Konutra, Scaffold Yazılım tarafından geliştirilen, emlak ofisleri için web sitesi ve portföy yönetimi yazılımıdır. Bir gayrimenkul ofisi değildir.","offers":{"@type":"Offer","price":"1250","priceCurrency":"TRY"}},
+{"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kurulum süreci nasıl işler?", "acceptedAnswer": {"@type": "Answer", "text": "Ön görüşmede ofis bilgileri, marka rengi ve mevcut portföy alınır. Site 1-3 iş günü içinde kurulur, ilanlar aktarılır ve panel eğitimi verilerek yayına geçilir."}}, {"@type": "Question", "name": "Mevcut ilanlarımız aktarılabilir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Sahibinden ve Emlakjet ilanları ile Excel listeleri kurulum sırasında fotoğraflarıyla birlikte aktarılır."}}, {"@type": "Question", "name": "Kendi alan adımızı kullanabilir miyiz?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Mevcut alan adınız siteye bağlanır. Alan adınız yoksa satın alma sürecinde destek verilir."}}, {"@type": "Question", "name": "Panelin kullanımı teknik bilgi gerektirir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Panel Türkçedir ve ilan girişi form doldurma kolaylığındadır. Kurulumdan sonra ofis ekibine kullanım eğitimi verilir."}}, {"@type": "Question", "name": "Site tasarımı ofisimize göre düzenlenir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Logo, marka rengi, tanıtım metinleri ve hizmetler ofisinize göre düzenlenir. Bu içerikler daha sonra panelden güncellenebilir."}}, {"@type": "Question", "name": "Hizmeti sonlandırmak istersek ne olur?", "acceptedAnswer": {"@type": "Answer", "text": "Sözleşme süresi yoktur. Hizmet sonlandırıldığında ilan bilgileri ve fotoğraflar ofise teslim edilir."}}]}
 ]}
 </script>
 </head>
@@ -63,7 +67,7 @@
 
   <section class="wrap">
     <figure class="hero-shot">
-      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/site-home.jpg" alt="Konutra ile hazırlanmış örnek emlak sitesinin ana sayfası" width="1600" height="1000" fetchpriority="high"></div>
+      <div class="browser"><div class="bar"><i></i><i></i><i></i></div><picture><source srcset="img/site-home.webp" type="image/webp"><img src="img/site-home.jpg" width="1600" height="1000" alt="Konutra ile hazırlanmış örnek emlak sitesinin ana sayfası" fetchpriority="high"></picture></div>
       <figcaption>Örnek proje. Ofis ve ilanlar temsilidir.</figcaption>
     </figure>
     <div class="trust">
@@ -77,22 +81,22 @@
   <section class="wrap sec" id="ozellikler">
     <h2 class="sec-title">Özellikler</h2>
     <div class="fx">
-      <div class="fx-img" data-reveal><img src="img/site-ilanlar.jpg" alt="Sitenin ilan listesi ve harita görünümü" loading="lazy"></div>
+      <div class="fx-img" data-reveal><picture><source srcset="img/site-ilanlar.webp" type="image/webp"><img src="img/site-ilanlar.jpg" width="1600" height="1000" alt="Sitenin ilan listesi ve harita görünümü" loading="lazy"></picture></div>
       <div class="fx-txt" data-reveal><h3>Web sitesi</h3><p>Ofisinizin alan adında çalışan, tüm ekran boyutlarına uyumlu kurumsal site. Ziyaretçiler portföyünüzü filtreler, haritada inceler ve WhatsApp üzerinden doğrudan iletişime geçer.</p>
         <ul><li>Gelişmiş ilan arama</li><li>Harita görünümü</li><li>İlan detay sayfası</li><li>Kredi hesaplama</li><li>Danışman profilleri</li><li>WhatsApp iletişimi</li></ul></div>
     </div>
     <div class="fx rev">
-      <div class="fx-img" data-reveal><img src="img/panel-ilanlar.jpg" alt="Yönetim panelinde ilan listesi" loading="lazy"></div>
+      <div class="fx-img" data-reveal><picture><source srcset="img/panel-ilanlar.webp" type="image/webp"><img src="img/panel-ilanlar.jpg" width="1800" height="1125" alt="Yönetim panelinde ilan listesi" loading="lazy"></picture></div>
       <div class="fx-txt" data-reveal><h3>Portföy yönetimi</h3><p>İlanlar fotoğraf, konum ve teknik bilgileriyle dakikalar içinde yayına alınır. Mevcut portföy Excel dosyasıyla toplu olarak aktarılabilir.</p>
         <ul><li>Sürükle bırak fotoğraf yükleme</li><li>Otomatik görsel optimizasyonu</li><li>Excel ile toplu aktarım</li><li>İlan metninden otomatik doldurma</li><li>Danışman yönetimi</li><li>Blog ve duyurular</li></ul></div>
     </div>
     <div class="fx">
-      <div class="fx-img" data-reveal><img src="img/panel-talep-detay.jpg" alt="Yönetim panelinde talep detayı ve görüşme durumu" loading="lazy"></div>
+      <div class="fx-img" data-reveal><picture><source srcset="img/panel-talep-detay.webp" type="image/webp"><img src="img/panel-talep-detay.jpg" width="1800" height="1125" alt="Yönetim panelinde talep detayı ve görüşme durumu" loading="lazy"></picture></div>
       <div class="fx-txt" data-reveal><h3>Talep takibi</h3><p>İletişim formu, gezme randevusu ve değerleme talepleri tek ekranda toplanır. Her talep ilgili ilan ve görüşme durumuyla birlikte kayıt altına alınır.</p>
         <ul><li>İletişim talepleri</li><li>Gezme randevuları</li><li>Değerleme başvuruları</li><li>İlan bazında kayıt</li><li>Görüşme durumu</li><li>Not ekleme</li></ul></div>
     </div>
     <div class="fx rev">
-      <div class="fx-img" data-reveal><img src="img/site-ilan.jpg" alt="Sitede ilan detay sayfası" loading="lazy"></div>
+      <div class="fx-img" data-reveal><picture><source srcset="img/site-ilan.webp" type="image/webp"><img src="img/site-ilan.jpg" width="1800" height="1125" alt="Sitede ilan detay sayfası" loading="lazy"></picture></div>
       <div class="fx-txt" data-reveal><h3>Altyapı ve uyumluluk</h3><p>Barındırma, güvenlik ve yasal gereklilikler hizmete dahildir. Teknik bakım ve güncellemeler tarafımızca yürütülür.</p>
         <ul><li>Kendi alan adınız</li><li>SSL sertifikası</li><li>SEO uyumlu altyapı</li><li>Günlük yedekleme</li><li>KVKK aydınlatma metni</li><li>Spam koruması</li></ul></div>
     </div>
@@ -132,7 +136,7 @@
   <section class="wrap sec" id="hakkimizda">
     <h2 class="sec-title">Hakkımızda</h2>
     <div class="founder" data-reveal>
-      <img src="img/simge-solmaz.jpg" alt="Simge Solmaz" width="640" height="800" loading="lazy">
+      <picture><source srcset="img/simge-solmaz.webp" type="image/webp"><img src="img/simge-solmaz.jpg" width="640" height="800" alt="Simge Solmaz" loading="lazy"></picture>
       <div>
         <div class="who"><b>Simge Solmaz</b><span>Kurucu</span></div>
         <p>Uluslararası ticaret ve finans alanında eğitim almıştır. Web geliştirme ve yapay zeka projelerine odaklanan bir teknoloji şirketinde Raporlama ve Ar-Ge Koordinatörü olarak görev yapmış, Teknofest ölçeğindeki projeler için fizibilite çalışmaları, teknik dokümantasyon ve uygulamalı araştırma yürütmüştür.</p>
