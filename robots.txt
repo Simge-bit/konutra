@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /_araclar/
+
+Sitemap: https://konutra.com.tr/sitemap.xml
