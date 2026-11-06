@@ -6,12 +6,18 @@ const $ = (id) => document.getElementById(id);
 const wa = (text) => `https://wa.me/${KONUTRA.whatsapp}?text=${encodeURIComponent(text)}`;
 const bilgi = wa("Merhaba, Konutra hakkında bilgi almak istiyorum.");
 
-$("yil").textContent = new Date().getFullYear();
-$("wa").href = bilgi;
-$("iletisim").innerHTML = [
+if ($("yil")) $("yil").textContent = new Date().getFullYear();
+if ($("wa")) $("wa").href = bilgi;
+if ($("iletisim")) $("iletisim").innerHTML = [
   `<a href="${bilgi}" target="_blank" rel="noopener">WhatsApp</a>`,
   KONUTRA.eposta && `<a href="mailto:${KONUTRA.eposta}">${KONUTRA.eposta}</a>`
 ].filter(Boolean).join("");
+
+// Ziyaret ölçümü (GoatCounter, çerezsiz). Olaylar panelde "tik-..." ve "form-..." olarak görünür.
+const olay = (ad) => { try { window.goatcounter && window.goatcounter.count({ path: ad, title: ad, event: true }); } catch (_) {} };
+// Ziyaretçinin hangi bölüme kadar indiği bir kez kaydedilir
+const bolumIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { olay("bolum-" + e.target.id); bolumIO.unobserve(e.target); } }), { rootMargin: "-45% 0px -45% 0px" });
+document.querySelectorAll("main section[id]").forEach((el) => bolumIO.observe(el));
 
 // Kaydırınca belirme
 const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
@@ -26,22 +32,28 @@ mnav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false
 
 // Örnek proje: sayfanın o kısmına gelince yüklenir
 const live = $("live");
-new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { live.src = live.dataset.src; o.disconnect(); } }, { rootMargin: "300px" }).observe(live);
+if (live) new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { live.src = live.dataset.src; o.disconnect(); } }, { rootMargin: "300px" }).observe(live);
 document.querySelectorAll(".live .tab").forEach((b) => b.addEventListener("click", () => {
   document.querySelectorAll(".live .tab").forEach((x) => x.setAttribute("aria-selected", x === b));
   live.src = b.dataset.src; $("openNew").href = b.dataset.src;
 }));
 
-// Demo talep formu WhatsApp mesajına dönüşür
-$("form").addEventListener("submit", (e) => {
+// Panel videosu yalnızca ekrana gelince oynar
+const pv = $("pvideo");
+if (pv) new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { pv.play().catch(() => {}); olay("video-izlendi"); } else pv.pause(); }), { threshold: 0.4 }).observe(pv);
+
+// Önizleme talebi formları WhatsApp mesajına dönüşür (sayfa başı ve alt bölüm)
+const onizlemeGonder = (e) => {
   e.preventDefault();
   const f = e.target, d = Object.fromEntries(new FormData(f));
   let ok = true;
-  f.querySelectorAll("[required]").forEach((el) => { const bad = !el.value.trim(); el.closest(".f").classList.toggle("err", bad); if (bad) ok = false; });
-  if (!ok) return;
-  const msg = [`Merhaba, ofisimiz için Konutra demosu talep ediyoruz.`, `Ad soyad: ${d.ad}`, `Ofis: ${d.ofis}`, `Telefon: ${d.tel}`, d.ilce && `İlçe: ${d.ilce}`, d.link && `Sahibinden: ${d.link}`].filter(Boolean).join("\n");
+  f.querySelectorAll("[required]").forEach((el) => { const bad = !el.value.trim(); el.closest(".f, .hf").classList.toggle("err", bad); if (bad) ok = false; });
+  if (!ok) { olay("form-eksik-" + f.id); f.querySelector(".err input")?.focus(); return; }
+  olay("form-gonderildi-" + f.id);
+  const msg = ["Merhaba, ofisimiz için ücretsiz site önizlemesi talep ediyoruz.", `Ofis: ${d.ofis}`, d.ilce && `Konum: ${d.ilce}`, d.link && `Sahibinden: ${d.link}`, d.ad && `Ad soyad: ${d.ad}`].filter(Boolean).join("\n");
   window.open(wa(msg), "_blank", "noopener");
-});
+};
+document.querySelectorAll("#form, #hform").forEach((f) => f.addEventListener("submit", onizlemeGonder));
 
 // Ana görsel: site ve telefon belirir, panel bildirimi birkaç saniyede bir değişir
 (() => {
