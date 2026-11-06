@@ -42,3 +42,28 @@ $("form").addEventListener("submit", (e) => {
   const msg = [`Merhaba, ofisimiz için Konutra demosu talep ediyoruz.`, `Ad soyad: ${d.ad}`, `Ofis: ${d.ofis}`, `Telefon: ${d.tel}`, d.ilce && `İlçe: ${d.ilce}`, d.link && `Sahibinden: ${d.link}`].filter(Boolean).join("\n");
   window.open(wa(msg), "_blank", "noopener");
 });
+
+// Ana görsel: site ve telefon belirir, panel bildirimi birkaç saniyede bir değişir
+(() => {
+  const sahne = document.querySelector(".sahne"), b = document.getElementById("bildirim");
+  if (!sahne || !b) return;
+  const azalt = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const liste = [
+    ["Yeni gezme randevusu talebi", "Bostanlı'da Deniz Manzaralı 3+1 Daire", "Yeni", ""],
+    ["Yeni değerleme başvurusu", "Mavişehir, 4+1 daire", "Yeni", ""],
+    ["İlan yayına alındı", "Alaybey'de Yatırımlık Satılık 1+1 Daire", "Yayında", "yesil"],
+    ["Yeni iletişim talebi", "Kiralık 2+1 daire arıyor", "Yeni", ""]
+  ];
+  let i = 0;
+  const yaz = ([t, s, d, c]) => {
+    b.querySelector(".t").textContent = t; b.querySelector(".s").textContent = s;
+    const e = b.querySelector(".dur"); e.textContent = d; e.className = "dur" + (c ? " " + c : "");
+  };
+  requestAnimationFrame(() => sahne.classList.add("on"));
+  if (azalt) { b.classList.add("on"); return; }
+  setTimeout(() => b.classList.add("on"), 1100);
+  setInterval(() => {
+    b.classList.remove("on");
+    setTimeout(() => { i = (i + 1) % liste.length; yaz(liste[i]); b.classList.add("on"); }, 500);
+  }, 4200);
+})();

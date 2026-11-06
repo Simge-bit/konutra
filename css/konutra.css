@@ -201,3 +201,27 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 500; color: var(--navy)
   *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; scroll-behavior: auto !important; }
 }
 .live .switch .ornek-ad { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* Ana görsel: site, telefon ve panel bildirimi. Taslak 1120 x 600 ölçüsündedir; her şey kutunun genişliğine göre
+   (cqw) orantılı küçülür, böylece telefonda da aynı kompozisyon görünür. 1cqw = taslakta 11,2 piksel. */
+.sahne { position: relative; aspect-ratio: 1120 / 600; container-type: inline-size; border-radius: 16px; background: linear-gradient(160deg, #eef0f5, #dde2ec); overflow: hidden; }
+.sahne .site { position: absolute; left: 5.4%; top: 8.3%; width: 73.2%; box-shadow: 0 2.7cqw 6.2cqw -3.1cqw rgba(21,25,42,.45); }
+.sahne .site .bar { height: 2.3cqw; gap: .6cqw; padding: 0 1.1cqw; }
+.sahne .site .bar i { width: .8cqw; height: .8cqw; }
+.sahne .tel { position: absolute; left: 73.2%; top: 25%; width: 20.5%; border: .8cqw solid #15171f; border-radius: 3.2cqw; overflow: hidden; background: #15171f; box-shadow: 0 3.6cqw 6.2cqw -2.2cqw rgba(0,0,0,.5); }
+.sahne .tel img { width: 100%; border-radius: 2.4cqw; }
+.bildirim { position: absolute; right: 1.8%; top: 6.7%; width: 25.9%; background: #fff; border-radius: 1.1cqw; padding: 1.25cqw 1.45cqw; box-shadow: 0 2.1cqw 4.5cqw -1.8cqw rgba(21,25,42,.45); font-size: 1.25cqw; line-height: 1.4; z-index: 2; }
+.bildirim .ust { display: flex; justify-content: space-between; font-size: 1.07cqw; color: var(--muted); margin-bottom: .55cqw; }
+.bildirim .ust b { color: var(--navy); font-weight: 600; }
+.bildirim .t { font-weight: 600; color: var(--fg); }
+.bildirim .s { color: var(--muted); margin-top: .2cqw; }
+.bildirim .dur { display: inline-block; margin-top: .7cqw; font-size: 1.07cqw; font-weight: 600; background: #fdecea; color: #b42318; padding: .2cqw .8cqw; border-radius: 2cqw; }
+
+/* Ana görsel animasyonu */
+.js .sahne .site { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .sahne .tel { opacity: 0; transform: translateX(40px); transition: opacity .9s var(--ease) .25s, transform .9s var(--ease) .25s; }
+.js .sahne .bildirim { opacity: 0; transform: translateY(-10px) scale(.96); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.js .sahne.on .site, .js .sahne.on .tel { opacity: 1; transform: none; }
+.js .sahne .bildirim.on { opacity: 1; transform: none; }
+.bildirim .dur.yesil { background: #e7f6ec; color: #18794e; }
+@media (prefers-reduced-motion: reduce) { .js .sahne .site, .js .sahne .tel, .js .sahne .bildirim { opacity: 1; transform: none; transition: none; } }
