@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/site-home.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="img/hero-ev.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/konutra.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -38,7 +38,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="#"><img src="logo/konutra-logo.svg" alt="Konutra" width="132" height="31"></a>
+    <a class="logo" href="#"><img class="lg-koyu" src="logo/konutra-logo.svg" alt="Konutra" width="132" height="31"><img class="lg-acik" src="logo/konutra-logo-beyaz.svg" alt="" width="132" height="31"></a>
     <nav class="links" aria-label="Ana menü">
       <a class="ulink" href="#ozellikler">Özellikler</a>
       <a class="ulink" href="#ornek">Örnek proje</a>
@@ -55,25 +55,25 @@
 </nav>
 
 <main>
-  <section class="wrap intro">
-    <div class="eyebrow">Emlak ofisleri için web sitesi ve portföy yönetimi</div>
-    <h1>Ofisinizin kurumsal web sitesi, tek panelden yönetilen portföyünüz.</h1>
-    <p class="lead">Konutra, emlak ofislerine kendi alan adlarında çalışan, mobil uyumlu bir web sitesi ve Türkçe yönetim paneli sunar. Portföyünüz tek panelden yönetilir, siteden gelen talepler anlık olarak kayda geçer.</p>
-    <div class="acts">
-      <a class="btn" href="#demo">Demo talep edin</a>
-      <a class="btn line" href="#ornek">Örnek projeyi inceleyin</a>
+  <section class="khero">
+    <div class="isik" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap khero-ic">
+      <div class="eyebrow">Emlak ofisleri için web sitesi ve portföy yönetimi</div>
+      <h1>Ofisinizin kurumsal web sitesi, tek panelden yönetilen portföyünüz.</h1>
+      <p class="lead">Konutra, emlak ofislerine kendi alan adlarında çalışan, mobil uyumlu bir web sitesi ve Türkçe yönetim paneli sunar. Portföyünüz tek panelden yönetilir, siteden gelen talepler anlık olarak kayda geçer.</p>
+      <div class="acts">
+        <a class="btn altin" href="#demo">Demo talep edin</a>
+        <a class="btn altin-cizgi" href="#ornek">Örnek projeyi inceleyin</a>
+      </div>
+    </div>
+    <div class="vitrin" aria-hidden="true">
+      <div class="cihaz"><picture><source srcset="img/hero-ev.webp" type="image/webp"><img src="img/hero-ev.jpg" alt="" width="1100" height="733"></picture>
+        <div class="ilan-bilgi"><span>Satılık · Bostanlı, Karşıyaka</span><b>Deniz Manzaralı 3+1 Daire</b><em>9.850.000 TL</em></div></div>
+      <div class="sayac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H5.5L4 17.5z"/><path d="M8 9h8M8 12h5"/></svg><b data-say="24">24</b><span>Bu ay gelen talep <i>↗</i></span></div>
     </div>
   </section>
 
   <section class="wrap">
-    <figure class="hero-shot">
-      <div class="sahne">
-      <div class="browser site"><div class="bar"><i></i><i></i><i></i></div><picture><source srcset="img/site-home.webp" type="image/webp"><img src="img/site-home.jpg" width="1600" height="1000" alt="Konutra ile hazırlanmış örnek emlak sitesinin ana sayfası" fetchpriority="high"></picture></div>
-        <div class="tel"><img src="img/mob-ilan.jpg" width="780" height="1688" alt="Örnek sitenin telefondaki ilan sayfası" loading="lazy"></div>
-        <div class="bildirim" id="bildirim" aria-hidden="true"><div class="ust"><b>Konutra paneli</b><span>Şimdi</span></div><div class="t">Yeni gezme randevusu talebi</div><div class="s">Bostanlı'da Deniz Manzaralı 3+1 Daire</div><span class="dur">Yeni</span></div>
-      </div>
-      <figcaption>Örnek proje. Ofis ve ilanlar temsilidir.</figcaption>
-    </figure>
     <div class="trust">
       <div><b>1-3 iş günü</b>Kurulum ve yayın süresi</div>
       <div><b>Kendi alan adınız</b>Ofisinize ait adres ve SSL sertifikası</div>
