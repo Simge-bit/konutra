@@ -200,3 +200,4 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 500; color: var(--navy)
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; scroll-behavior: auto !important; }
 }
+.live .switch .ornek-ad { font-size: 14px; font-weight: 500; color: var(--text); }
