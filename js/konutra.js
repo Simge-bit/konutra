@@ -38,9 +38,18 @@ document.querySelectorAll(".live .tab").forEach((b) => b.addEventListener("click
   live.src = b.dataset.src; $("openNew").href = b.dataset.src;
 }));
 
-// Panel videosu yalnızca ekrana gelince oynar
-const pv = $("pvideo");
-if (pv) new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { pv.play().catch(() => {}); olay("video-izlendi"); } else pv.pause(); }), { threshold: 0.4 }).observe(pv);
+// Panel videosu: ekrana yaklaşınca ekran boyuna uygun dosya yüklenir, görününce oynar.
+// Tarayıcı otomatik oynatmayı engellerse (örneğin iPhone düşük güç modu) oynat düğmesi gösterilir.
+const pv = $("pvideo"), pvBtn = $("pvOynat");
+if (pv) {
+  const oynat = () => pv.play().then(() => { pvBtn.hidden = true; }).catch(() => { pvBtn.hidden = false; });
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { pv.src = innerWidth < 700 ? pv.dataset.kucuk : pv.dataset.buyuk; pv.preload = "auto"; pv.load(); o.disconnect(); } }, { rootMargin: "800px 0px" }).observe(pv);
+  let izlendi = false;
+  new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { oynat(); if (!izlendi) { izlendi = true; olay("video-izlendi"); } } else pv.pause();
+  }), { threshold: 0.35 }).observe(pv);
+  pvBtn.addEventListener("click", oynat);
+}
 
 // Önizleme talebi formları WhatsApp mesajına dönüşür (sayfa başı ve alt bölüm)
 const onizlemeGonder = (e) => {
